@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-
+import os
 from django.db import models
 
 
@@ -24,9 +24,9 @@ class user(models.Model):
 #just a number
 class question(models.Model):
 	"""docstring for question"""
-	category_id = models.DecimalField()
-	question_string = models.CharField()
-	question_number = models.DecimalField()
+	category_id = models.SmallIntegerField(blank=False)
+	question_string = models.CharField(max_length=120,blank=False, null=True)
+	question_number = models.SmallIntegerField(blank=False)
 	img1 = models.ImageField(upload_to=get_image_path, blank=True, null=True)
 	img2 = models.ImageField(upload_to=get_image_path, blank=True, null=True)
 	img3 = models.ImageField(upload_to=get_image_path, blank=True, null=True)
@@ -36,7 +36,7 @@ class question(models.Model):
 	img7 = models.ImageField(upload_to=get_image_path, blank=True, null=True)
 	img8 = models.ImageField(upload_to=get_image_path, blank=True, null=True)
 	img9 =  models.ImageField(upload_to=get_image_path, blank=True, null=True)
-	answeer: models.DecimalField()
+	answeer = models.SmallIntegerField(blank=False)
 
 	def __unicode__(self): #__str__
 		return self.question_string
