@@ -1,1 +1,9 @@
-hello
+
+{% for item in data %}
+<h1>{{ item.img1 }}</h1>
+{% load staticfiles %}
+<img href= "/{{ item.img1}}" src="/{{ item.img1}}" height="200" width="250" border="1"/>
+{% endfor %}
+<link rel="stylesheet" type="text/css" href= {% static "abc.css" %}>
+{% load staticfiles %}
+<img href= "{% static "config.png"%}" src="{% static "config.png"%}"  alt="Mountain View" style="width:304px;height:228px;">
