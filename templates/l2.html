@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> {{data.question_string}} </h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+  var img1_clicked =0;
+  var img2_clicked =0;
+  var img3_clicked =0;
+  var img4_clicked =0;
+	$(document).ready(function(){
+	    $("td").click(function(){
+        switch($(this).attr('id')) {
+          case '1':
+              if(img1_clicked==0){
+                $(this).addClass("clicked");
+                img1_clicked=1;
+              }else{
+                $(this).removeClass("clicked");
+                img1_clicked=0;
+              }
+              break;
+          case '2':
+              if(img2_clicked==0){
+                $(this).addClass("clicked");
+                img2_clicked=1;
+              }else{
+                $(this).removeClass("clicked");
+                img2_clicked=0;
+              }
+              break;
+          case '3':
+              if(img3_clicked==0){
+                $(this).addClass("clicked");
+                img3_clicked=1;
+              }else{
+                $(this).removeClass("clicked");
+                img3_clicked=0;
+              }
+              break;
+          case '4':
+              if(img4_clicked==0){
+                $(this).addClass("clicked");
+                img4_clicked=1;
+              }else{
+                $(this).removeClass("clicked");
+                img4_clicked=0;
+              }
+              break;
+          } 
+	    	//$("td").removeClass("clicked");
+	        //$(this).addClass("clicked");
+	        //$("#answeer").val($(this).attr('id'));
+          var answeer ='';
+          $("td").each(function(index, element){
+            if( $(this).hasClass("clicked") ) answeer += $(this).attr('id');
+          })
+          document.getElementsByName('abc')[0].innerHTML = answeer;
+	        $("#answeer").attr('value',answeer)
+	    });
+});
+</script>
+<p name="abc">abc</p>
+<table >
+  <tr>
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img1}}" src="/{{ data.img1}}" height="150" width="150" /></td>
+    <td class="unclicked" id="2"><img onclick="changeText(this)" href= "/{{ data.img2}}" src="/{{ data.img2}}" height="150" width="150" /></td>		
+    <td class="unclicked" id="3"><img onclick="changeText(this)" href= "/{{ data.img3}}" src="/{{ data.img3}}" height="150" width="150" /></td> 
+    <td class="unclicked" id="4"><img onclick="changeText(this)" href= "/{{ data.img4}}" src="/{{ data.img4}}" height="150" width="150" /></td> 
+  </tr>
+</table>
+<form action="/games/answeer/" method="POST"> {% csrf_token %}
+  <input type="number" name="answeer" id="answeer" hidden="true" value="0">
+  <input type="number" name="category_id" hidden="true" value="2" >
+  <input type="number" name="question_number" hidden="true" value="1">
+  <input type="submit" value="Submit">
+</form> 
+
+</body>
+<style>
+.unclicked {
+    border-style: solid;
+    border-width: 3px;
+    border-color: green;
+}
+.clicked {
+    border-style: solid;
+    border-width: 3px;
+    border-color: red;
+}
+</style>
+</html>

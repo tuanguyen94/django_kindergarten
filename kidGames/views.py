@@ -19,20 +19,20 @@ def k6(request):
 
 def k7(request):
     data = question.objects.filter(category_id=7)[0];
-    return render(request,"table.html",{"data": data})
+    return render(request,"k7.html",{"data": data})
 
 def k8(request):
     data = question.objects.filter(category_id=8)[0];
-    return render(request,"table.html",{"data": data})
+    return render(request,"k8.html",{"data": data})
 
 
 def l1(request):
     data = question.objects.filter(category_id=1)[0];
-    return render(request,"table.html",{"data": data})
+    return render(request,"l1.html",{"data": data})
 
 def l2(request):
     data = question.objects.filter(category_id=2)[0];
-    return render(request,"table.html",{"data": data})
+    return render(request,"l2.html",{"data": data})
 
 
 def checkAnsweer(request):
