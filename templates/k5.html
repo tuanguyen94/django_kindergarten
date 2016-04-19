@@ -14,22 +14,22 @@
 	    });
 });
 </script>
-<table background="/{{ data.background}}">
+<table background="/{{ data.background}}" background-size="100% auto" style="background-size: 100% auto; background-repeat: no-repeat;">
   <tr>
   {% if data.img1%}
-    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img1}}" src="/{{ data.img1}}" height="150" width="150" /></td>
+    <td class="unclicked" id="1" height="150" width="150"><img onclick="changeText(this)" href= "/{{ data.img1}}" src="/{{ data.img1}}" height="70" width="70" /></td>
   {% else %}
     <td height="150" width="150"></td>
   {% endif %}
 
   {% if data.img2%}
-    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img2}}" src="/{{ data.img2}}" height="150" width="150" /></td>
+    <td class="unclicked" id="2" height="150" width="150"><img onclick="changeText(this)" href= "/{{ data.img2}}" src="/{{ data.img2}}" height="70" width="70" /></td>
   {% else %}
     <td height="150" width="150"></td>
   {% endif %}
 
   {% if data.img3%}
-    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img3}}" src="/{{ data.img3}}" height="150" width="150" /></td>
+    <td class="unclicked" id="3" height="150" width="150"><img onclick="changeText(this)" href= "/{{ data.img3}}" src="/{{ data.img3}}" height="70" width="70" /></td>
   {% else %}
     <td height="150" width="150"></td>
   {% endif %}
@@ -38,19 +38,19 @@
 
   <tr>
   {% if data.img4%}
-    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img4}}" src="/{{ data.img4}}" height="150" width="150" /></td>
+    <td class="unclicked" id="4" height="150" width="150"><img onclick="changeText(this)" href= "/{{ data.img4}}" src="/{{ data.img4}}" height="70" width="70" /></td>
   {% else %}
     <td height="150" width="150"></td>
   {% endif %}
 
   {% if data.img5%}
-    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img5}}" src="/{{ data.img5}}" height="150" width="150" /></td>
+    <td class="unclicked" id="5" height="150" width="150"<img onclick="changeText(this)" href= "/{{ data.img5}}" src="/{{ data.img5}}" height="70" width="70" /></td>
   {% else %}
     <td height="150" width="150"></td>
   {% endif %}
 
   {% if data.img6%}
-    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img6}}" src="/{{ data.img6}}" height="150" width="150" /></td>
+    <td class="unclicked" id="6" height="150" width="150"><img onclick="changeText(this)" href= "/{{ data.img6}}" src="/{{ data.img6}}" height="70" width="70" /></td>
   {% else %}
     <td height="150" width="150"></td>
   {% endif %}
@@ -59,19 +59,19 @@
 
   <tr>
   {% if data.img7%}
-    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img7}}" src="/{{ data.img7}}" height="150" width="150" /></td>
+    <td class="unclicked" id="7" height="150" width="150"><img onclick="changeText(this)" href= "/{{ data.img7}}" src="/{{ data.img7}}" height="70" width="70" /></td>
   {% else %}
     <td height="150" width="150"></td>
   {% endif %}
 
   {% if data.img8%}
-    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img8}}" src="/{{ data.img8}}" height="150" width="150" /></td>
+    <td class="unclicked" id="8" height="150" width="150"><img onclick="changeText(this)" href= "/{{ data.img8}}" src="/{{ data.img8}}" height="70" width="70" /></td>
   {% else %}
     <td height="150" width="150"></td>
   {% endif %}
 
   {% if data.img9%}
-    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img9}}" src="/{{ data.img9}}" height="150" width="150" /></td>
+    <td class="unclicked" id="9" height="150" width="150"><img onclick="changeText(this)" href= "/{{ data.img9}}" src="/{{ data.img9}}" height="70" width="70" /></td>
   {% else %}
     <td height="150" width="150"></td>
   {% endif %}
@@ -108,11 +108,15 @@ img {
 }
 */
 .clicked{
-  -webkit-filter: drop-shadow(2px 2px 0 red)
-                  drop-shadow(-2px -2px 0 red);
-  filter: drop-shadow(2px 2px 0 red) 
-          drop-shadow(-2px -2px 0 red);
+  -webkit-filter: drop-shadow(2px 1px 0 red)
+                  drop-shadow(-1px -1px 0 red);
+  filter: drop-shadow(2px 1px 0 red) 
+          drop-shadow(-1px -1px 0 red);
 }
-
+table{
+  background-image: "/{{ data.background}}";
+  background-position: center top;
+  background-size: 100% auto;
+}
 </style>
 </html>
