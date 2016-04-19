@@ -1,4 +1,4 @@
-# django_kindergarten Tuan Nguyen
+# django kindergarten
 
 This is a demo website using Django template
 
