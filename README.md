@@ -1,0 +1,7 @@
+# django_kindergarten Tuan Nguyen
+
+This is a demo website using Django template
+
+All games follow this site:
+
+https://www.ixl.com/math/kindergarten
