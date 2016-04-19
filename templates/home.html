@@ -1,8 +1,21 @@
 
 {% for item in data %}
 <h1>{{ item.img1 }}</h1>
+{% if item.img1%}
+	<img href= "/{{ item.img1}}" src="/{{ item.img1}}" height="200" width="250" border="1"/>
+{% else %}
+	<h1></h1>
+{% endif %}
+
+
+{% if item.img2%}
+	<img href= "/{{ item.img2}}" src="/{{ item.img2}}" height="200" width="250" border="1"/>
+{% else %}
+	<h1></h1>
+{% endif %}
 {% load staticfiles %}
 <img href= "/{{ item.img1}}" src="/{{ item.img1}}" height="200" width="250" border="1"/>
+
 {% endfor %}
 <link rel="stylesheet" type="text/css" href= {% static "abc.css" %}>
 {% load staticfiles %}

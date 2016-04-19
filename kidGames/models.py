@@ -49,9 +49,9 @@ class user(models.Model):
 class question(models.Model):
 	"""docstring for question"""
 	category_id = models.SmallIntegerField(blank=False)
-	question_string = models.CharField(max_length=120,blank=False, null=True)
 	question_number = models.SmallIntegerField(blank=False)
-	background = img1 = models.ImageField(upload_to=UploadToPathAndRename(os.path.join(MEDIA_URL, 'upload', 'here')), blank=True, null=True)
+	question_string = models.CharField(max_length=120,blank=False, null=True)
+	background = models.ImageField(upload_to=UploadToPathAndRename(os.path.join(MEDIA_URL, 'upload', 'here')), blank=True, null=True)
 	img1 = models.ImageField(upload_to=UploadToPathAndRename(os.path.join(MEDIA_URL, 'upload', 'here')), blank=True, null=True)
 	img2 = models.ImageField(upload_to=UploadToPathAndRename(os.path.join(MEDIA_URL, 'upload', 'here')), blank=True, null=True)
 	img3 = models.ImageField(upload_to=UploadToPathAndRename(os.path.join(MEDIA_URL, 'upload', 'here')), blank=True, null=True)
