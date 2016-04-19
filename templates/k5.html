@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> {{data.question_string}} </h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $("td").click(function(){
+        if($(this).hasClass("unclicked")){
+          $("td").removeClass("clicked");
+          $(this).addClass("clicked");
+          $("#answeer").attr('value',$(this).attr('id'))
+        }
+	    });
+});
+</script>
+<table background="/{{ data.background}}">
+  <tr>
+  {% if data.img1%}
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img1}}" src="/{{ data.img1}}" height="150" width="150" /></td>
+  {% else %}
+    <td height="150" width="150"></td>
+  {% endif %}
+
+  {% if data.img2%}
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img2}}" src="/{{ data.img2}}" height="150" width="150" /></td>
+  {% else %}
+    <td height="150" width="150"></td>
+  {% endif %}
+
+  {% if data.img3%}
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img3}}" src="/{{ data.img3}}" height="150" width="150" /></td>
+  {% else %}
+    <td height="150" width="150"></td>
+  {% endif %}
+    	
+  </tr>
+
+  <tr>
+  {% if data.img4%}
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img4}}" src="/{{ data.img4}}" height="150" width="150" /></td>
+  {% else %}
+    <td height="150" width="150"></td>
+  {% endif %}
+
+  {% if data.img5%}
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img5}}" src="/{{ data.img5}}" height="150" width="150" /></td>
+  {% else %}
+    <td height="150" width="150"></td>
+  {% endif %}
+
+  {% if data.img6%}
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img6}}" src="/{{ data.img6}}" height="150" width="150" /></td>
+  {% else %}
+    <td height="150" width="150"></td>
+  {% endif %}
+      
+  </tr>
+
+  <tr>
+  {% if data.img7%}
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img7}}" src="/{{ data.img7}}" height="150" width="150" /></td>
+  {% else %}
+    <td height="150" width="150"></td>
+  {% endif %}
+
+  {% if data.img8%}
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img8}}" src="/{{ data.img8}}" height="150" width="150" /></td>
+  {% else %}
+    <td height="150" width="150"></td>
+  {% endif %}
+
+  {% if data.img9%}
+    <td class="unclicked" id="1"><img onclick="changeText(this)" href= "/{{ data.img9}}" src="/{{ data.img9}}" height="150" width="150" /></td>
+  {% else %}
+    <td height="150" width="150"></td>
+  {% endif %}
+      
+  </tr>
+</table>
+<form action="/games/answeer/" method="POST"> {% csrf_token %}
+  <input type="number" name="answeer" id="answeer" hidden="true" value="0">
+  <input type="number" name="category_id" hidden="true" value="5" >
+  <input type="number" name="question_number" hidden="true" value="1">
+  <input type="submit" value="Submit">
+</form> 
+
+</body>
+<style>
+/*
+.unclicked {
+    border-style: solid;
+    border-width: 3px;
+    border-color: green;
+}
+
+.clicked {
+    border-style: solid;
+    border-width: 3px;
+    border-color: red;
+}
+
+img {
+  -webkit-filter: drop-shadow(2px 2px 0 green)
+                  drop-shadow(-2px -2px 0 green);
+  filter: drop-shadow(2px 2px 0 green) 
+          drop-shadow(-2px -2px 0 green);
+}
+*/
+.clicked{
+  -webkit-filter: drop-shadow(2px 2px 0 red)
+                  drop-shadow(-2px -2px 0 red);
+  filter: drop-shadow(2px 2px 0 red) 
+          drop-shadow(-2px -2px 0 red);
+}
+
+</style>
+</html>

@@ -11,7 +11,7 @@ def index(request):
 
 def k5(request):
     data = question.objects.filter(category_id=5)[0];
-    return render(request,"table.html",{"data": data})
+    return render(request,"k5.html",{"data": data})
 
 def k6(request):
     data = question.objects.filter(category_id=6)[0];
